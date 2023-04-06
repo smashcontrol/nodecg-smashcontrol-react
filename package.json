@@ -1,0 +1,47 @@
+{
+  "name": "nodecg-smashcontrol-react",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "swc19",
+    "email": "swc6992@rit.edu",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^2.0.0",
+    "dashboardPanels": [
+      {
+        "name": "panel",
+        "title": "Panel",
+        "width": 6,
+        "file": "panel.html",
+        "headerColor": "#525F78"
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "repository": "https://github.com/smashcontrol/nodecg-smashcontrol-react.git",
+  "license": "MIT"
+}
