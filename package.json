@@ -8,6 +8,9 @@
     "email": "swc6992@rit.edu",
     "url": ""
   },
+  "scripts":{
+    "build": "npx concurrently 'npm:build:*'"
+  },
   "files": [
     "dashboard",
     "graphics",
@@ -22,11 +25,29 @@
     "compatibleRange": "^2.0.0",
     "dashboardPanels": [
       {
-        "name": "panel",
-        "title": "Panel",
-        "width": 6,
-        "file": "panel.html",
+        "name": "set-info",
+        "title": "Set Info",
+        "width": 9,
+        "file": "set-info.html",
+        "workspace": "Set Info",
         "headerColor": "#525F78"
+      },
+      {
+        "name": "set-info-dialog",
+        "title": "Edit Set Info",
+        "width": 5,
+        "file": "set-info-dialog.html",
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "edit set",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ]
       }
     ]
   },
@@ -41,6 +62,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^3.0.0",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "parcel-bundler": "^1.12.5"
   },
   "repository": "https://github.com/smashcontrol/nodecg-smashcontrol-react.git",
   "license": "MIT"
