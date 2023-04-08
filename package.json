@@ -1,79 +1,36 @@
 {
   "name": "nodecg-smashcontrol-react",
-  "version": "0.0.0",
-  "description": "",
-  "homepage": "",
-  "author": {
-    "name": "swc19",
-    "email": "swc6992@rit.edu",
-    "url": ""
-  },
-  "scripts":{
+  "version": "0.0.1",
+  "description": "Smashcontrol for the 21st century",
+  "author": "swooce",
+  "scripts": {
+    "watch:dashboard": "npx parcel watch src/dashboard/*.html --out-dir=dashboard --public-url=.",
+    "build:dashboard": "npx parcel build src/dashboard/*.html --out-dir=dashboard --public-url=.",
+    "watch": "npx concurrently 'npm:watch:*'",
     "build": "npx concurrently 'npm:build:*'"
   },
-  "files": [
-    "dashboard",
-    "graphics",
-    "extension.js",
-    "extension"
-  ],
-  "keywords": [
-    "",
-    "nodecg-bundle"
-  ],
   "nodecg": {
     "compatibleRange": "^2.0.0",
     "dashboardPanels": [
       {
         "name": "set-info",
         "title": "Set Info",
-        "width": 9,
         "file": "set-info.html",
         "workspace": "Set Info",
-        "headerColor": "#525F78"
-      },
-      {
-        "name": "set-info-dialog",
-        "title": "Edit Set Info",
-        "width": 5,
-        "file": "set-info-dialog.html",
-        "dialog": true,
-        "dialogButtons": [
-          {
-            "name": "edit set",
-            "type": "confirm"
-          },
-          {
-            "name": "cancel",
-            "type": "dismiss"
-          }
-        ]
+        "width": 9
       }
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "license": "MIT",
   "dependencies": {
     "isomorphic-fetch": "^3.0.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.9"
   },
   "devDependencies": {
-    "concurrently": "^7.3.0",
+    "concurrently": "^8.0.1",
     "parcel-bundler": "^1.12.5"
-  },
-  "repository": "https://github.com/smashcontrol/nodecg-smashcontrol-react.git",
-  "license": "MIT"
+  }
 }
