@@ -13,11 +13,35 @@
     "compatibleRange": "^2.0.0",
     "dashboardPanels": [
       {
+        "name": "game-select",
+        "title": "Game Select",
+        "file": "game-select.html",
+        "workspace": "Set Info",
+        "width": 2
+      },
+      {
         "name": "set-info",
         "title": "Set Info",
         "file": "set-info.html",
         "workspace": "Set Info",
-        "width": 9
+        "width": 8
+      },
+      {
+        "name": "set-info-dialog",
+        "title": "Edit Set Info",
+        "width": 5,
+        "file": "set-info-dialog.html",
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "edit set",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ]
       }
     ]
   },
@@ -27,6 +51,7 @@
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-select": "^5.7.2",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {
