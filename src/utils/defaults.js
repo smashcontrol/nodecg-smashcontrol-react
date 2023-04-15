@@ -32,3 +32,12 @@ export const dialogFields = [
     {id: 'commentator2', placeholder: 'Commentator 2', type: 'text'},
     {id: 'commentator2pronouns', placeholder: 'Commentator 2 Pronouns', type: 'text'}
 ]
+
+export const streamQueueDialogFields = [
+    {id: 'player1tag', placeholder: 'Player 1 Tag', type: 'text'},
+    {id: 'player1pronouns', placeholder: 'Player 1 Pronouns', type: 'text'},
+    {id: 'player2tag', placeholder: 'Player 2 Tag', type: 'text'},
+    {id: 'player2pronouns', placeholder: 'Player 2 Pronouns', type: 'text'},
+    {id: 'bracketlocation', placeholder: 'Bracket Location', type: 'text'},
+    {id: 'stream', placeholder: 'Stream Title', type: 'text'}
+]

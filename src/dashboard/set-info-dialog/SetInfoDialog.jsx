@@ -53,7 +53,6 @@ export const SetInfoDialog = () => {
         setSetInfo(newSetInfo);
     }, [setInfo, setSetInfo]);
 
-    const currentSet = setInfo;
     return(
         <Container>
             <Player1Info>

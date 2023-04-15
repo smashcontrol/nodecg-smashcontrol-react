@@ -1,4 +1,5 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback } from 'react';
+{/* Because this is built with Parcel, icons need to be front-loaded on build instead of dynamically accessed */}
 import ssb64_images from '../../assets/icons/ssb64/*.png';
 import ssbm_images from '../../assets/icons/ssbm/*.png';
 import ssbb_images from '../../assets/icons/ssbb/*.png';
@@ -16,19 +17,13 @@ export const SetInfo = () => {
     const [setInfo, setSetInfo] = useReplicant('setInfo', defaultSetObject, {namespace: NODECG_BUNDLE});
 
     const handleScoreChange = useCallback((player, increment) => {
-        if(player === 1){
-            if(currentSet.player1score + increment < 0 || currentSet.player1score + increment > 99){
-                return;
-            } else {
-                currentSet.player1score += increment
-            }
-        } else {
-            if(currentSet.player2score + increment < 0 || currentSet.player2score + increment > 99){
-                return;
-            } else {
-                currentSet.player2score += increment
-            }
-        }
+        player === 1
+            ? (currentSet.player1score + increment < 0 || currentSet.player1score + increment > 99)
+                ? null
+            : (currentSet.player1score += increment)
+            : (currentSet.player2score + increment < 0 || currentSet.player2score + increment > 99)
+                ? null
+            : (currentSet.player2score += increment);
         setSetInfo(currentSet);
     }, [currentSet, setSetInfo]);
 
@@ -42,8 +37,9 @@ export const SetInfo = () => {
         [currentSet.player1tag, currentSet.player1character, currentSet.player1pronouns, currentSet.player1port, currentSet.player1score, 
             currentSet.player2tag, currentSet.player2character, currentSet.player2pronouns, currentSet.player2port, currentSet.player2score] = 
         [currentSet.player2tag, currentSet.player2character, currentSet.player2pronouns, currentSet.player2port, currentSet.player2score, 
-            currentSet.player1tag, currentSet.player1character, currentSet.player1pronouns, currentSet.player1port, currentSet.player1score]
-        setSetInfo(currentSet)
+            currentSet.player1tag, currentSet.player1character, currentSet.player1pronouns, currentSet.player1port, currentSet.player1score];
+
+        setSetInfo(currentSet);
     }, [currentSet, setSetInfo]);
 
     const handleOpenDialog = useCallback(() => {
@@ -63,6 +59,9 @@ export const SetInfo = () => {
             case 'ssb4':
                 return ssb4_images[character];
             case 'ssbult':
+                if(["Alex", "Enderman", "Zombie"].includes(character)){
+                    return ssbult_images["Steve"];
+                }
                 return ssbult_images[character];
             case 'roa':
                 return roa_images[character];
@@ -73,10 +72,12 @@ export const SetInfo = () => {
     return (
         <Container>
             <PlayerInfo>
-                <PlayerName>{currentSet.player1tag}</PlayerName> {/* Player 1 Name */}
-                <PlayerPronouns>{currentSet.player1pronouns}</PlayerPronouns> {/* P1 pronouns */}
+                {/* Player 1 Info */}
+                <PlayerName>{currentSet.player1tag}</PlayerName>
+                <PlayerPronouns>{currentSet.player1pronouns}</PlayerPronouns>
                 <PlayerPort>Port {currentSet.player1port}</PlayerPort>
-                <PlayerImage src={handleGetImage(currentSet.player1character)} game={currentSet.game}></PlayerImage> {/* P1 Char */}
+                {/* Get image for the current character, pass the game prop into styled for dimensions */}
+                <PlayerImage src={handleGetImage(currentSet.player1character)} game={currentSet.game}></PlayerImage>
                 <ScoreButtons>
                     <MinusButton onClick={() => handleScoreChange(1, -1)}>-1</MinusButton>
                     <PlusButton onClick={() => handleScoreChange(1, 1)}>+1</PlusButton>
@@ -99,7 +100,7 @@ export const SetInfo = () => {
                 <ScoreButtons>
                     <MinusButton onClick={() => handleScoreChange(2, -1)}>-1</MinusButton>
                     <PlusButton onClick={() => handleScoreChange(2, 1)}>+1</PlusButton>
-                    {/* <button onClick={() => setSetInfo(defaultSetObject)}>Reset</button> */}
+                    {/* {<button onClick={() => setSetInfo(defaultSetObject)}>Reset</button>} */}
                 </ScoreButtons>
             </PlayerInfo>
         </Container>
@@ -137,8 +138,14 @@ const ScoreButtons = styled.div`
         font-size: 20px;
         width: 50%;
         height: 50%;
+        background: #212529;
+        color: white;
         border: none;
         border-radius: 5px;
+        &:hover{
+            background: #1e1e1e;
+            color: lightgrey;
+        }
     }
 `
 const MinusButton = styled.button`
@@ -171,9 +178,13 @@ const ResetButton = styled.button`
     height: 75%;
     color: white;
     background: #d9534f;
-    margin: 0 auto 0 auto;
     border: none;
     border-radius: 5px;
+    margin: 0 auto 0 auto;
+    &:hover{
+        background: #993a37;
+        color: lightgrey;
+    }
 `
 
 const SwapButton = styled.button`
@@ -181,6 +192,14 @@ const SwapButton = styled.button`
     width: 20%;
     height: 75%;
     margin: 0 auto 0 auto;
+    background: #212529;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    &:hover{
+        background: #1e1e1e;
+        color: lightgrey;
+    }
 `
 
 const EditSetButton = styled.button`
@@ -188,4 +207,12 @@ const EditSetButton = styled.button`
     width: 75%;
     height: 100%;
     margin: 0 auto 0 auto;
+    background: #212529;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    &:hover{
+        background: #1e1e1e;
+        color: lightgrey;
+    }
 `

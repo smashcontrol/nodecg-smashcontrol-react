@@ -42,6 +42,37 @@
             "type": "dismiss"
           }
         ]
+      },
+      {
+        "name": "stream-queue",
+        "title": "Stream Queue",
+        "file": "stream-queue.html",
+        "workspace": "Set Info",
+        "width": 2
+      },
+      {
+        "name": "stream-queue-dialog",
+        "title": "Edit Set Info",
+        "width": 5,
+        "file": "stream-queue-dialog.html",
+        "dialog": true,
+        "dialogButtons": [
+          {
+            "name": "edit set",
+            "type": "confirm"
+          },
+          {
+            "name": "cancel",
+            "type": "dismiss"
+          }
+        ]
+      },
+      {
+        "name": "thumbnail-gen",
+        "title": "Thumbnail Generator",
+        "file": "thumbnail-gen.html",
+        "workspace": "Set Info",
+        "width": 2
       }
     ]
   },
@@ -50,6 +81,7 @@
     "isomorphic-fetch": "^3.0.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
+    "react-admin": "^4.9.3",
     "react-dom": "^18.2.0",
     "react-select": "^5.7.2",
     "styled-components": "^5.3.9"

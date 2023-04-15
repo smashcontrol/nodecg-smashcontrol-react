@@ -11,7 +11,7 @@ const ssbb = ssbm.slice(0, -4).concat(["Diddy Kong", "Meta Knight", "King Dedede
                                                 
 const ssbpm = ssbb.concat(["Mewtwo", "Roy"]);
 
-const ssb4 = ssbb.concat(["Dr. Mario", "Mewtwo", "Roy", "Rosalina", "Bowser Jr.", "Roy Koopa", "Wendy", "Iggy", "Lemmy", "Morton", "Ludwig", "Larry", "Greninja",
+const ssb4 = ssbb.slice(0, -5).concat(["Dr. Mario", "Mewtwo", "Roy", "Rosalina", "Bowser Jr.", "Roy Koopa", "Wendy", "Iggy", "Lemmy", "Morton", "Ludwig", "Larry", "Greninja",
                                     "Lucina", "Corrin Female", "Corrin Male", "Robin Female", "Robin Male", "Palutena", "Dark Pit", "Villager Male", "Villager Female",
                                     "Wii Fit Male", "Wii Fit Female", "Little Mac", "Duck Hunt", "Shulk", "Mega Man", "Pac Man", "Ryu", "Cloud", "Bayonetta", "Mii"])
                                     .filter(e => e !== "Ice Climbers");
