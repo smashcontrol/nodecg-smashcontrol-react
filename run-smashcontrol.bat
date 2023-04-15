@@ -1,3 +1,3 @@
-yarn build
+call yarn build
 cd ../..
-nodecg start
+call nodecg start
