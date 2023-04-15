@@ -9,23 +9,22 @@ export const StreamQueue = () => {
     const [setInfo, setSetInfo] = useReplicant('setInfo', defaultSetObject, {namespace: NODECG_BUNDLE});
     const [streamQueue, setStreamQueue] = useReplicant('streamQueue', [{}], {namespace: NODECG_BUNDLE});
     const [currentStreamQueueIdx, setCurrentStreamQueueIdx] = useReplicant('currentStreamQueueIdx', 0, {namespace: NODECG_BUNDLE});
+    const [openSQDialog, setOpenSQDialog] = useReplicant('openSQDialog', false, {namespace: NODECG_BUNDLE});
 
-
-    const handleAddNewSet = useCallback(() => {   
+    const handleAddNewSet = useCallback(async () => {   
         setStreamQueue([...streamQueue, {}]);
         setCurrentStreamQueueIdx(streamQueue.length);
-        nodecg.getDialog('stream-queue-dialog').open();
-    }, [streamQueue, setStreamQueue, setCurrentStreamQueueIdx, currentStreamQueueIdx]);
+        setOpenSQDialog(true);
+    }, [streamQueue, setStreamQueue, setCurrentStreamQueueIdx, currentStreamQueueIdx, setOpenSQDialog]);
 
     const handleRemoveSet = useCallback((idx) => {
         setStreamQueue(streamQueue.filter((_, i) => i !== idx));
-        setCurrentStreamQueueIdx(0);
     },  [streamQueue, setStreamQueue]);
 
     const handleEditSet = useCallback((idx) => {
         setCurrentStreamQueueIdx(idx);
-        nodecg.getDialog('stream-queue-dialog').open();
-    }, [currentStreamQueueIdx, setCurrentStreamQueueIdx]);
+        setOpenSQDialog(true);
+    }, [currentStreamQueueIdx, setCurrentStreamQueueIdx, setOpenSQDialog]);
 
     const handleImportSet = useCallback((idx) => {
         const set_to_import = streamQueue[idx];
@@ -37,6 +36,11 @@ export const StreamQueue = () => {
         handleRemoveSet(idx);
     }, [streamQueue, setStreamQueue, setSetInfo]);
 
+    useEffect(() => {
+        if(openSQDialog){
+            nodecg.getDialog('stream-queue-dialog').open();
+        }
+    }, [openSQDialog, currentStreamQueueIdx]);
 
     return(
         <Container>

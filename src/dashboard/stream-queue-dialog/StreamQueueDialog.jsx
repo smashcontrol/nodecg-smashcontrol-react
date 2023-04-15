@@ -9,6 +9,7 @@ const NODECG_BUNDLE = 'nodecg-smashcontrol-react';
 export const StreamQueueDialog = () => {
     const [streamQueue, setStreamQueue] = useReplicant('streamQueue', [{}], {namespace: NODECG_BUNDLE});
     const [currentStreamQueueIdx] = useReplicant('currentStreamQueueIdx', 0, {namespace: NODECG_BUNDLE});
+    const [openSQDialog, setOpenSQDialog] = useReplicant('openSQDialog', false, {namespace: NODECG_BUNDLE});
 
     const idxRef = useRef(null);
     const streamQueueRef = useRef([])
@@ -40,8 +41,12 @@ export const StreamQueueDialog = () => {
         streamQueueRef.current = streamQueue;
         document.addEventListener('dialog-confirmed', () => {
             saveInfo(idxRef.current);
+            setOpenSQDialog(false);
         });
-    }, [currentStreamQueueIdx, streamQueue]);
+        document.addEventListener('dialog-dismissed', () => {
+            setOpenSQDialog(false);
+        });
+    }, [currentStreamQueueIdx, streamQueue, setOpenSQDialog]);
 
     return(
         <Container>
