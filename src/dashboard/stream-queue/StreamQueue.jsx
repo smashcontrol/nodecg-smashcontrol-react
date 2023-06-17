@@ -38,6 +38,7 @@ export const StreamQueue = () => {
 
     useEffect(() => {
         if(openSQDialog){
+            setCurrentStreamQueueIdx(currentStreamQueueIdx);
             nodecg.getDialog('stream-queue-dialog').open();
         }
     }, [openSQDialog, currentStreamQueueIdx]);

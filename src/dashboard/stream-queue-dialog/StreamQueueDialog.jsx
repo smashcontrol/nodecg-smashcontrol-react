@@ -20,9 +20,10 @@ export const StreamQueueDialog = () => {
         try{
             const setValue = streamQueueRef.current[idxRef.current][field.id] ? streamQueueRef.current[idxRef.current][field.id] : '';
             return(
-                <input id={field.id} key={field.id} placeholder={field.placeholder} defaultValue={setValue}></input>
+                <input id={field.id} key={Math.random()} placeholder={field.placeholder} defaultValue={setValue}></input>
             )
-        } catch (e){}
+        } catch (e){
+        }
     }, [streamQueue, currentStreamQueueIdx]);
 
     const saveInfo = useCallback((idx) => {
