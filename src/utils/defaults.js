@@ -17,6 +17,11 @@ export const defaultSetObject = {
     game: 'ssb64',
 }
 
+export const defaultThumbnailObject = {
+    player1costume: 'Default',
+    player2costume: 'Default'
+}
+
 export const dialogFields = [
     {id: 'player1tag', placeholder: 'Player 1 Tag', type: 'text'},
     {id: 'player1pronouns', placeholder: 'Player 1 Pronouns', type: 'text'},

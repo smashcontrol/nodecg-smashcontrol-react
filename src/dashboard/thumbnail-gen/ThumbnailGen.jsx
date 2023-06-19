@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useReplicant } from '../../utils/hooks';
+import { defaultSetObject, defaultThumbnailObject } from '../../utils/defaults';
 import {ssb64, ssbm, ssbb, ssb4, ssbult, roa} from '../../utils/costumes';
 
 const NODECG_BUNDLE = 'nodecg-smashcontrol-react';
@@ -8,8 +9,8 @@ const NODECG_BUNDLE = 'nodecg-smashcontrol-react';
 
 export const ThumbnailGen = () => {
     const [runPrint, setRunPrint] = useReplicant('runPrint', false, {namespace: NODECG_BUNDLE});
-    const [setInfo] = useReplicant('setInfo', false, {namespace: NODECG_BUNDLE});
-    const [thumbnailInfo, setThumbnailInfo] = useReplicant('thumbnailInfo', false, {namespace: NODECG_BUNDLE});
+    const [setInfo] = useReplicant('setInfo', defaultSetObject, {namespace: NODECG_BUNDLE});
+    const [thumbnailInfo, setThumbnailInfo] = useReplicant('thumbnailInfo', defaultThumbnailObject, {namespace: NODECG_BUNDLE});
     // const costumeList = () => {
     //     switch(setInfo.game){
     //         case "ssb64":
