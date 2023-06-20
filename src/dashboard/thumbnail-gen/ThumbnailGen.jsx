@@ -30,6 +30,9 @@ export const ThumbnailGen = () => {
     //     }
     // }
     const generateDropdown = (character, player) => {
+        if(setInfo.game === 'ssb64'){
+            character = character.split("[REMIX] ").at(-1);
+        }
         if(character !== undefined){
             let thumbValue = thumbnailInfo[player];
             if(!ssb64[character].includes(thumbValue)){
@@ -48,10 +51,9 @@ export const ThumbnailGen = () => {
             )
         }
     }
-    const handleSelectChange = useCallback((player, value) => {
-        thumbnailInfo[player] = value;
+    const handleSelectChange = useCallback((field, value) => {
+        thumbnailInfo[field] = value;
         setThumbnailInfo(thumbnailInfo);
-        console.log(thumbnailInfo);
     }, [thumbnailInfo, setThumbnailInfo]);
 
     return(
@@ -67,6 +69,16 @@ export const ThumbnailGen = () => {
                     {generateDropdown(setInfo.player2character, 'player2costume')}
                 </DropdownPlayer2>
             </DropdownContainer>
+            <InputContainer>
+                <TournamentName>
+                Tournament Name:
+                    <input onChange={(e) => handleSelectChange('tourneyname', e.target.value)}></input>
+                </TournamentName>
+                <TournamentDate>
+                Tournament Date:
+                    <input onChange={(e) => handleSelectChange('tourneydate', e.target.value)}></input>
+                </TournamentDate>
+            </InputContainer>
         </Container>
         
     )
@@ -74,12 +86,12 @@ export const ThumbnailGen = () => {
 
 const Container = styled.div`
     width: 100%;
-    height: 160px;
+    height: 275px;
 `
 
 const ThumbnailButton = styled.button`
     width: 100%;
-    height: 35%;
+    height: 25%;
     background: #212529;
     color: white;
     border: none;
@@ -102,6 +114,22 @@ const DropdownPlayer1 = styled.div`
 const DropdownPlayer2 = styled.div`
     margin-top: 10px;
     & select {
+        width: 100%;
+    }
+`
+
+const InputContainer = styled.div`
+    width: 75%;
+`
+const TournamentName = styled.div`
+    margin-top: 10px;
+    & input {
+        width: 100%;
+    }
+`
+const TournamentDate = styled.div`
+    margin-top: 10px;
+    & input {
         width: 100%;
     }
 `
