@@ -1,6 +1,7 @@
 const ssb64 = ["Mario", "Luigi", "Yoshi", "Pikachu", "Fox", "Samus", "Falcon", "Jigglypuff", "Ness", "Kirby", "Link", "Donkey Kong", "[REMIX] Bowser",
             "[REMIX] Dr. Mario", "[REMIX] Sheik", "[REMIX] Young Link", "[REMIX] Ganondorf", "[REMIX] Dark Samus", "[REMIX] King Dedede", "[REMIX] Falco",
-            "[REMIX] Wolf", "[REMIX] Mewtwo", "[REMIX] Lucas", "[REMIX] Marth", "[REMIX] Wario", "[REMIX] Sonic", "[REMIX] Conker", "[REMIX] Marina"];
+            "[REMIX] Wolf", "[REMIX] Mewtwo", "[REMIX] Lucas", "[REMIX] Marth", "[REMIX] Wario", "[REMIX] Sonic", "[REMIX] Conker", "[REMIX] Marina",
+            "[REMIX] Goemon", "[REMIX] Slippy", "[REMIX] Peppy"];
 
 const ssbm = ssb64.slice(0, 11).concat(["Peach", "Bowser", "Marth", "Zelda", "Sheik", "Ganondorf", "Falco", "Ice Climbers",
                                     "Mr. Game and Watch", "Dr. Mario", "Young Link", "Mewtwo", "Roy"]);

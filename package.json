@@ -6,6 +6,8 @@
   "scripts": {
     "watch:dashboard": "npx parcel watch src/dashboard/*.html --out-dir=dashboard --public-url=.",
     "build:dashboard": "npx parcel build src/dashboard/*.html --out-dir=dashboard --public-url=.",
+    "watch:extension": "npx parcel watch src/extension/*.js --out-dir=extension --public-url=.",
+    "build:extension": "npx parcel build src/extension/*.js --out-dir=extension --public-url=.",
     "watch": "npx concurrently 'npm:watch:*'",
     "build": "npx concurrently 'npm:build:*'"
   },
