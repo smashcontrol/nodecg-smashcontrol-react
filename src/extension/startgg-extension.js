@@ -1,4 +1,3 @@
-import { ValidationQuery } from "./queries/Validation";
 import { get } from "./utils/nodecg";
 
 const NODECG_BUNDLE = 'nodecg-smashcontrol-react';
