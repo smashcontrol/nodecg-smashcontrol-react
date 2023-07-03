@@ -2,14 +2,20 @@ import React, { useCallback, useEffect, useRef } from "react";
 import styled from 'styled-components';
 import { useReplicant } from '../../utils/hooks';
 import { defaultSetObject } from '../../utils/defaults';
+import { start } from "repl";
 
 const NODECG_BUNDLE = 'nodecg-smashcontrol-react';
+const PAGE_LIMIT = 4;
+
 
 export const StreamQueue = () => { 
     const [setInfo, setSetInfo] = useReplicant('setInfo', defaultSetObject, {namespace: NODECG_BUNDLE});
     const [streamQueue, setStreamQueue] = useReplicant('streamQueue', [{}], {namespace: NODECG_BUNDLE});
     const [currentStreamQueueIdx, setCurrentStreamQueueIdx] = useReplicant('currentStreamQueueIdx', 0, {namespace: NODECG_BUNDLE});
     const [openSQDialog, setOpenSQDialog] = useReplicant('openSQDialog', false, {namespace: NODECG_BUNDLE});
+    const [startingIndex, setStartingIndex] = useReplicant('startingIndex', 0, {namespace: NODECG_BUNDLE});
+    const [pageNumber, setPageNumber] = useReplicant('pageNumber', 1, {namespace: NODECG_BUNDLE});
+    const MAX_PAGES = Math.max(Math.ceil(streamQueue.length / PAGE_LIMIT), 1);
 
     const handleAddNewSet = useCallback(async () => {   
         setStreamQueue([...streamQueue, {}]);
@@ -36,6 +42,11 @@ export const StreamQueue = () => {
         handleRemoveSet(idx);
     }, [streamQueue, setStreamQueue, setSetInfo]);
 
+    const handlePageChange = useCallback((increment) => {
+        setStartingIndex(startingIndex + increment);
+        increment > 0 ? setPageNumber(pageNumber + 1) : setPageNumber(pageNumber - 1);
+    }, [startingIndex, setStartingIndex, pageNumber, setPageNumber])
+
     useEffect(() => {
         if(openSQDialog){
             setCurrentStreamQueueIdx(currentStreamQueueIdx);
@@ -43,9 +54,21 @@ export const StreamQueue = () => {
         }
     }, [openSQDialog, currentStreamQueueIdx]);
 
+    useEffect(() => {
+        if(pageNumber > MAX_PAGES){
+            handlePageChange(-PAGE_LIMIT);
+        }
+    }, [streamQueue, pageNumber])
+
+    const handleClearStreamQueue = useCallback(() => {
+        setStreamQueue([])
+        setStartingIndex(0);
+        setPageNumber(1);
+    }, [setStreamQueue]);
+
     return(
         <Container>
-            {streamQueue.slice(0, 5).map((stream, idx) =>
+            {streamQueue.slice(startingIndex, startingIndex + PAGE_LIMIT).map((stream, idx) =>
             <StreamQueueElement key={idx}>
                 <StreamStream>{stream.stream}</StreamStream>
                 <StreamPlayers><span>{stream.player1tag}</span> vs. <span>{stream.player2tag}</span></StreamPlayers>
@@ -60,6 +83,15 @@ export const StreamQueue = () => {
                 <Plus>+</Plus>
                 <AddNew>Add New</AddNew>
             </AddNewStreamQueueElement>
+            <NavigationContainer disabled={MAX_PAGES === 1 && pageNumber === 1}>
+                <NavButton disabled={pageNumber === 1} onClick={() => handlePageChange(-PAGE_LIMIT)}>{`<`}</NavButton>
+                <PageIndicator>Page {pageNumber} of {MAX_PAGES}</PageIndicator>
+                <NavButton disabled={pageNumber === MAX_PAGES} onClick={() => handlePageChange(PAGE_LIMIT)}>{`>`}</NavButton>
+            </NavigationContainer>
+            <ClearButton>
+                <button onClick={() => handleClearStreamQueue()}>Clear Stream Queue</button>
+            </ClearButton>
+            
         </Container>
         )
 }
@@ -152,4 +184,65 @@ const ImportButton = styled.button`
 const EditSetButton = styled.button`
 `
 const RemoveButton = styled.button`
+`
+
+const NavigationContainer = styled.div`
+    display: ${props => {
+        switch(props.disabled){
+            case true:
+                return `none;`
+            case false:
+                return `grid;`
+        }
+    }}
+    grid-template-columns: 1fr 3fr 1fr;
+    height: 30px;
+    margin-top: 20px;
+    
+`
+const NavButton = styled.button`
+    margin: auto;
+    width: 50%;
+    height: 100%;
+    background: #212529;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    &:hover{
+        background: #1e1e1e;
+        color: lightgrey;
+    }
+    &:disabled {
+        display: none
+    }
+`
+
+const PageIndicator = styled.div`
+    grid-column-start: 2;
+    grid-column-end: 3;
+    text-align: center;
+    font-size: 18px;
+    line-height: 32px;
+`
+
+const ClearButton = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    height: 35px;
+    margin-top: 20px;
+    & button {
+        grid-column-start: 2;
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+        color: white;
+        background: #d9534f;
+        border: none;
+        border-radius: 5px;
+        margin: 0 auto 0 auto;
+        &:hover{
+            background: #993a37;
+            color: lightgrey;
+        }
+    }
 `
