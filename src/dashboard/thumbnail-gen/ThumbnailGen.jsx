@@ -72,11 +72,11 @@ export const ThumbnailGen = () => {
             <InputContainer>
                 <TournamentName>
                 Tournament Name:
-                    <input onChange={(e) => handleSelectChange('tourneyname', e.target.value)}></input>
+                    <input onChange={(e) => handleSelectChange('tourneyname', e.target.value)} placeholder='(optional)'></input>
                 </TournamentName>
                 <TournamentDate>
                 Tournament Date:
-                    <input onChange={(e) => handleSelectChange('tourneydate', e.target.value)}></input>
+                    <input onChange={(e) => handleSelectChange('tourneydate', e.target.value)} placeholder='(optional)'></input>
                 </TournamentDate>
             </InputContainer>
         </Container>

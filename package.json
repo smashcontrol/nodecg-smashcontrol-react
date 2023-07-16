@@ -85,6 +85,7 @@
     "react": "^18.2.0",
     "react-admin": "^4.9.3",
     "react-dom": "^18.2.0",
+    "react-fitty": "^1.0.1",
     "react-select": "^5.7.2",
     "start": "^5.1.0",
     "styled-components": "^5.3.9"

@@ -10,6 +10,7 @@ import roa_images from '../../assets/icons/roa/*.png';
 import styled from 'styled-components';
 import { useReplicant } from '../../utils/hooks';
 import { defaultSetObject } from '../../utils/defaults';
+import { ReactFitty } from "react-fitty";
 
 const NODECG_BUNDLE = 'nodecg-smashcontrol-react';
 
@@ -73,8 +74,8 @@ export const SetInfo = () => {
         <Container>
             <PlayerInfo>
                 {/* Player 1 Info */}
-                <PlayerName>{currentSet.player1tag}</PlayerName>
-                <PlayerPronouns>{currentSet.player1pronouns}</PlayerPronouns>
+                <PlayerName><ReactFitty maxSize={48}>{currentSet.player1tag}</ReactFitty></PlayerName>
+                <PlayerPronouns><ReactFitty maxSize={24}>{currentSet.player1pronouns}</ReactFitty></PlayerPronouns>
                 <PlayerPort>Port {currentSet.player1port}</PlayerPort>
                 {/* Get image for the current character, pass the game prop into styled for dimensions */}
                 <PlayerImage src={handleGetImage(currentSet.player1character)} game={currentSet.game}></PlayerImage>
@@ -93,8 +94,8 @@ export const SetInfo = () => {
             </ScoreDisplay>
 
             <PlayerInfo>
-                <PlayerName>{currentSet.player2tag}</PlayerName>
-                <PlayerPronouns>{currentSet.player2pronouns}</PlayerPronouns>
+                <PlayerName><ReactFitty maxSize={48}>{currentSet.player2tag}</ReactFitty></PlayerName>
+                <PlayerPronouns><ReactFitty maxSize={24}>{currentSet.player2pronouns}</ReactFitty></PlayerPronouns>
                 <PlayerPort>Port {currentSet.player2port}</PlayerPort>
                 <PlayerImage src={handleGetImage(currentSet.player2character)} game={currentSet.game}></PlayerImage>
                 <ScoreButtons>
@@ -116,9 +117,12 @@ const PlayerInfo = styled.div`
     display: grid;
     text-align: center;
     grid-template-rows: 1fr .75fr .5fr 2fr 2fr;
+	& > * {
+		overflow: hidden;
+	}
 `
 const PlayerName = styled.div`
-    font-size: 48px;
+    font-size: 48px;	
 `
 const PlayerPronouns = styled.div`
     font-size: 24px;
