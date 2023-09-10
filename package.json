@@ -75,6 +75,27 @@
         "file": "thumbnail-gen.html",
         "workspace": "Set Info",
         "width": 2
+      },
+      {
+        "name": "game-select-top-8",
+        "title": "Game Select",
+        "file": "game-select.html",
+        "workspace": "Top 8",
+        "width": 2
+      },
+      {
+        "name": "top-8-generator",
+        "title": "Top 8 Generator",
+        "file": "top-8-generator.html",
+        "workspace": "Top 8",
+        "width": 8
+      },
+      {
+        "name": "top-8-importer",
+        "title": "Top 8 Importer",
+        "file": "top-8-importer.html",
+        "workspace": "Top 8",
+        "width": 2
       }
     ]
   },
