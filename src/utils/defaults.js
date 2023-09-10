@@ -25,11 +25,11 @@ export const defaultThumbnailObject = {
 export const dialogFields = [
     {id: 'player1tag', placeholder: 'Player 1 Tag', type: 'text'},
     {id: 'player1pronouns', placeholder: 'Player 1 Pronouns', type: 'text'},
-    {id: 'player1character', placeholder: 'Player 1 Character', type: 'character'},
+    {id: 'player1character', type: 'character'},
     {id: 'player1port', placeholder: 'Player 1 Port', type: 'port', options: [1, 2, 3, 4]},
     {id: 'player2tag', placeholder: 'Player 2 Tag', type: 'text'},
     {id: 'player2pronouns', placeholder: 'Player 2 Pronouns', type: 'text'},
-    {id: 'player2character', placeholder: 'Player 2 Character', type: 'character'},
+    {id: 'player2character', type: 'character'},
     {id: 'player2port', placeholder: 'Player 2 Port', type: 'port', options: [1, 2, 3, 4]},
     {id: 'bracketlocation', placeholder: 'Bracket Location', type: 'text'},
     {id: 'commentator1', placeholder: 'Commentator 1', type: 'text'},
@@ -45,4 +45,12 @@ export const streamQueueDialogFields = [
     {id: 'player2pronouns', placeholder: 'Player 2 Pronouns', type: 'text'},
     {id: 'bracketlocation', placeholder: 'Bracket Location', type: 'text'},
     {id: 'stream', placeholder: 'Stream Title', type: 'text'}
+]
+
+export const defaultTop8Object = [
+    {id: 'playertag', placeholder: 'Player Tag', type: 'text'},
+    {id: 'playercharacter', type: 'character'},
+    {id: 'playercostume', type: 'costume'},
+    {id: 'playersecondary', type: 'character'},
+    {id: 'playerplacement', type: 'placement'}
 ]

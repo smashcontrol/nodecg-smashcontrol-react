@@ -34,13 +34,13 @@ export let ssb64 = {
 
 export let ssbm = {
     'Bowser': ['Default', 'Black', 'Blue', 'Red'], 
-    'DonkeyKong': ['Default', 'Black', 'Blue', 'Green', 'Red'], 
-    'DrMario': ['Default', 'Black', 'Blue', 'Green', 'Red'], 
+    'Donkey Kong': ['Default', 'Black', 'Blue', 'Green', 'Red'], 
+    'Dr. Mario': ['Default', 'Black', 'Blue', 'Green', 'Red'], 
     'Falco': ['Default', 'Green', 'Red', 'White'], 
     'Falcon': ['Default', 'Black', 'Blood', 'Blue', 'Green', 'Pink'], 
     'Fox': ['Default', 'Blue', 'Green', 'Orange'], 
     'Ganondorf': ['Default', 'Blue', 'Green', 'Purple', 'Red'], 
-    'IceClimbers': ['Default', 'Green', 'Nana Orange', 'Nana Purple'], 
+    'Ice Climbers': ['Default', 'Green', 'Nana Orange', 'Nana Purple'], 
     'Jigglypuff': ['Default', 'Blue', 'Crown', 'Green', 'Red'], 
     'Kirby': ['Default', 'Blue', 'Green', 'Red', 'White', 'Yellow'], 
     'Link': ['Default', 'Black', 'Blue', 'Red', 'White'], 
@@ -48,7 +48,7 @@ export let ssbm = {
     'Mario': ['Default', 'Black', 'Blue', 'Green', 'Wario'], 
     'Marth': ['Default', 'Black', 'Green', 'Red', 'White'], 
     'Mewtwo': ['Default', 'Blue', 'Green', 'Red'], 
-    'MrGameAndWatch': ['Default', 'Blue', 'Green', 'Red'], 
+    'Mr. Game and Watch': ['Default', 'Blue', 'Green', 'Red'], 
     'Ness': ['Default', 'Blue', 'Green', 'Yellow'], 
     'Peach': ['Default', 'Blue', 'Daisy', 'Green', 'White'], 
     'Pichu': ['Default', 'Blue', 'Green', 'Red'], 
@@ -57,12 +57,12 @@ export let ssbm = {
     'Samus': ['Default', 'Black', 'Green', 'Pink', 'Purple'], 
     'Sheik': ['Default', 'Black', 'Blue', 'Green', 'Red'], 
     'Yoshi': ['Default', 'Cyan', 'Dark Blue', 'Pink', 'Red', 'Yellow'], 
-    'YoungLink': ['Default', 'Black', 'Blue', 'Red', 'White'], 
+    'Young Link': ['Default', 'Black', 'Blue', 'Red', 'White'], 
     'Zelda': ['Default', 'Blue', 'Green', 'Red', 'White']
 };
 
 export let ssbult = {
-    "Banjo&Kazooie": [
+    "Banjo & Kazooie": [
         "Default",
         "Black",
         "Blue",
@@ -92,7 +92,7 @@ export let ssbult = {
         "Red",
         "Yellow"
     ],
-    "BowserJr": [
+    "Bowser Jr.": [
         "Default",
         "Iggy",
         "Larry",
@@ -152,7 +152,7 @@ export let ssbult = {
         "Red",
         "White"
     ],
-    "DarkPit": [
+    "Dark Pit": [
         "Default",
         "Blue",
         "Brown",
@@ -162,7 +162,7 @@ export let ssbult = {
         "White",
         "Yellow"
     ],
-    "DarkSamus": [
+    "Dark Samus": [
         "Default",
         "Black",
         "Gray",
@@ -172,7 +172,7 @@ export let ssbult = {
         "Red",
         "Yellow"
     ],
-    "DiddyKong": [
+    "Diddy Kong": [
         "Default",
         "Blue",
         "Cyan",
@@ -182,7 +182,7 @@ export let ssbult = {
         "White",
         "Yellow"
     ],
-    "DonkeyKong": [
+    "Donkey Kong": [
         "Default",
         "Black",
         "Blue",
@@ -192,7 +192,7 @@ export let ssbult = {
         "White",
         "Yellow"
     ],
-    "DrMario": [
+    "Dr. Mario": [
         "Default",
         "Black",
         "Blue",
@@ -202,7 +202,7 @@ export let ssbult = {
         "Red",
         "Yellow"
     ],
-    "DuckHunt": [
+    "Duck Hunt": [
         "Default",
         "Black",
         "Blue",
@@ -272,7 +272,7 @@ export let ssbult = {
         "Solo Orange",
         "Solo"
     ],
-    "IceClimbers": [
+    "Ice Climbers": [
         "Default",
         "Blue",
         "Green",
@@ -362,7 +362,7 @@ export let ssbult = {
         "White",
         "Yellow"
     ],
-    "KingDedede": [
+    "King Dedede": [
         "Default",
         "Black",
         "Blue",
@@ -372,7 +372,7 @@ export let ssbult = {
         "Pink",
         "Purple"
     ],
-    "KingK.Rool": [
+    "King K. Rool": [
         "Default",
         "Black",
         "Blue",
@@ -402,7 +402,7 @@ export let ssbult = {
         "Teal",
         "White"
     ],
-    "LittleMac": [
+    "Little Mac": [
         "Default",
         "Black",
         "Blue",
@@ -472,7 +472,7 @@ export let ssbult = {
         "White",
         "Yellow"
     ],
-    "MegaMan": [
+    "Mega Man": [
         "Default",
         "Brown",
         "Cyan",
@@ -482,7 +482,7 @@ export let ssbult = {
         "Orange",
         "Red"
     ],
-    "MetaKnight": [
+    "Meta Knight": [
         "Default",
         "Dark",
         "Galacta",
@@ -502,19 +502,19 @@ export let ssbult = {
         "Shadow",
         "Yellow"
     ],
-    "MiiBrawler": [
+    "Mii Brawler": [
         "Default",
     ],
-    "MiiGunner": [
+    "Mii Gunner": [
         "Default",
         "Sans",
         "Cuphead",
         "Vault Boy"
     ],
-    "MiiSwordfighter": [
+    "Mii Swordfighter": [
         "Default"
     ],
-    "MinMin": [
+    "Min Min": [
         "Default",
         "Black",
         "Blue",
@@ -524,7 +524,7 @@ export let ssbult = {
         "Red",
         "Yellow"
     ],
-    "MrGameAndWatch": [
+    "Mr. Game And Watch": [
         "Default",
         "Blue",
         "Cyan",
@@ -554,7 +554,7 @@ export let ssbult = {
         "Green",
         "Red"
     ],
-    "PacMan": [
+    "Pac Man": [
         "Default",
         "Black",
         "Blue",
@@ -604,7 +604,7 @@ export let ssbult = {
         "Selene Cap",
         "Yellow"
     ],
-    "PiranhaPlant": [
+    "Piranha Plant": [
         "Default",
         "Black",
         "Blue",
@@ -624,7 +624,7 @@ export let ssbult = {
         "White",
         "Yellow"
     ],
-    "PokemonTrainer": [
+    "Pokemon Trainer": [
         "Default",
         "Calem",
         "Default Female",
@@ -634,7 +634,7 @@ export let ssbult = {
         "May",
         "Selene"
     ],
-    "PyraMythra": [
+    "Pyra Mythra": [
         "Default",
         "Black",
         "Blue",
@@ -814,7 +814,7 @@ export let ssbult = {
         "Orange",
         "Yellow"
     ],
-    "ToonLink": [
+    "Toon Link": [
         "Default",
         "Blue",
         "Brown",
@@ -844,7 +844,7 @@ export let ssbult = {
         "Red",
         "Yellow"
     ],
-    "WiiFit": [
+    "Wii Fit": [
         "Default",
         "Default Male",
         "Female Green",
@@ -874,7 +874,7 @@ export let ssbult = {
         "Red",
         "Yellow"
     ],
-    "YoungLink": [
+    "Young Link": [
         "Default",
         "Blue",
         "Cyan",
@@ -894,7 +894,7 @@ export let ssbult = {
         "Violet",
         "White"
     ],
-    "ZeroSuitSamus": [
+    "Zero Suit Samus": [
         "Default",
         "Black",
         "Blue",
@@ -1292,3 +1292,13 @@ export let roa = {
         "Valentines"
     ]
 };
+
+export const all_costumes = {
+    "ssb64": ssb64,
+    "ssbm": ssbm,
+    //"ssbb": ssbb,
+    //"ssbpm": ssbpm,
+    //"ssb4": ssb4,
+    "ssbult": ssbult,
+    "roa": roa
+}

@@ -22,6 +22,7 @@ const ssbult = ssb4.concat(["Ice Climbers", "Young Link", "Snake", "Wolf", "Poke
                                         "Chrom", "Isabelle", "Inkling Boy", "Inkling Girl", "Ken", "Simon", "Richter", "Joker", "Mii Gunner",
                                         "Mii Swordfighter", "Mii Brawler", "Banjo & Kazooie", "Hero", "Terry", "Byleth Male", "Byleth Female", "Min Min", "Steve", 
                                         "Alex", "Zombie", "Enderman", "Sephiroth", "Pyra Mythra", "Kazuya", "Sora"]);
+
 const roa = ["Absa", "Clairen", "Elliana", "Etalus", "Forsburn", "Hodan", "Kragg", "Maypul", "Mollo", "Olympia", "Orcane", "Ori", "Pomme", "Ranno", "Shovel Knight",
         "Sylvanos", "Wrastor", "Zetterburn"];	 
 

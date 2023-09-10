@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef } from "react";
 import styled from 'styled-components';
 import { useReplicant } from '../../utils/hooks';
 import { defaultSetObject } from '../../utils/defaults';
-import { start } from "repl";
 
 const NODECG_BUNDLE = 'nodecg-smashcontrol-react';
 const PAGE_LIMIT = 4;

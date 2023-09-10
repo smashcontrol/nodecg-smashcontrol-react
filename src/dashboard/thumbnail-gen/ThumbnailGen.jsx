@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { useReplicant } from '../../utils/hooks';
 import { defaultSetObject, defaultThumbnailObject } from '../../utils/defaults';
-import {ssb64, ssbm, ssbb, ssb4, ssbult, roa} from '../../utils/costumes';
+import { all_costumes } from '../../utils/costumes';
 
 const NODECG_BUNDLE = 'nodecg-smashcontrol-react';
 
@@ -11,38 +11,46 @@ export const ThumbnailGen = () => {
     const [runPrint, setRunPrint] = useReplicant('runPrint', false, {namespace: NODECG_BUNDLE});
     const [setInfo] = useReplicant('setInfo', defaultSetObject, {namespace: NODECG_BUNDLE});
     const [thumbnailInfo, setThumbnailInfo] = useReplicant('thumbnailInfo', defaultThumbnailObject, {namespace: NODECG_BUNDLE});
-    // const costumeList = () => {
-    //     switch(setInfo.game){
-    //         case "ssb64":
-    //             return ssb64;
-    //         case "ssbm":
-    //             return ssbm;
-    //         case "ssbb":
-    //             return ssbb;
-    //         case "ssb4":
-    //             return ssb4;
-    //         case "ssbult":
-    //             return ssbult;
-    //         case "roa":
-    //             return roa;
-    //         default:
-    //             return null;
-    //     }
-    // }
+    const current_game_costume_list = all_costumes[setInfo.game];
+
+    const special_cases = {
+        "Alex": "Steve",
+        "Enderman": "Steve",
+        "Zombie": "Steve",
+        "Byleth Male": "Byleth",
+        "Byleth Female": "Byleth",
+        "Corrin Female": "Corrin",
+        "Corrin Male": "Corrin",
+        "Charizard": "Pokemon Trainer",
+        "Ivysaur": "Pokemon Trainer",
+        "Squirtle": "Pokemon Trainer",
+        "Pokemon Trainer Male": "Pokemon Trainer",
+        "Pokemon Trainer Female": "Pokemon Trainer",
+        "Inkling Boy": "Inkling",
+        "Inkling Girl": "Inkling",
+        "Robin Male": "Robin",
+        "Robin Female": "Robin",
+        "Villager Boy": "Villager",
+        "Villager Girl": "Villager",
+        "Wii Fit Male": "Wii Fit",
+        "Wii Fit Female": "Wii Fit"
+    }
+
     const generateDropdown = (character, player) => {
         if(setInfo.game === 'ssb64'){
             character = character.split("[REMIX] ").at(-1);
         }
         if(character !== undefined){
+            character = special_cases[character] ? special_cases[character] : character;
             let thumbValue = thumbnailInfo[player];
-            if(!ssb64[character].includes(thumbValue)){
+            if(!current_game_costume_list[character].includes(thumbValue)){
                 thumbValue = 'Default';
                 handleSelectChange(player, 'Default');
             }
             return (
                 <select id={player} key={Math.random()} defaultValue={thumbValue}
                     onChange={(e) => handleSelectChange(player, e.target.value)}>
-                    {ssb64[character].map((costume, i) => {
+                    {current_game_costume_list[character].map((costume, i) => {
                         return(
                             <option key={i} value={costume}>{costume}</option>
                         )
