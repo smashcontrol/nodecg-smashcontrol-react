@@ -12,7 +12,7 @@ function log(...args){
 
 async function verifyStartGGAuthKey(auth){};
 
-startggRouter.get('/verify', async (req, res) => {
+startggRouter.post('/verify', async (req, res) => {
     verifyStartGGAuthKey(req.body['apikey']);
 });
 
