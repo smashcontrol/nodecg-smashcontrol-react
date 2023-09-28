@@ -1229,7 +1229,7 @@ const characters = {
     "ssbb": ssbb_character_list.sort(),
     "ssbpm": ssbpm_character_list.sort(),
     "ssb4": ssb4_character_list.sort(),
-    "ssbult": ssbult.sort(),
+    "ssbult": ssbult_character_list.sort(),
     "roa": roa_character_list.sort()
 }
 const backend_character_objects = {
