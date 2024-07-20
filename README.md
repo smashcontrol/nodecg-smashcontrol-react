@@ -13,7 +13,7 @@ Developing graphics for smashcontrol does require some knowledge in React, but t
 
 
 ## Installation
-To begin using smashcontrol, you must have both [Node](https://github.com/swc19/neutral-tilt-graphics-react) and [git](https://git-scm.com/) installed. Then, install NodeCG:
+To begin using smashcontrol, you must have both [Node](https://nodejs.org/en) and [git](https://git-scm.com/) installed. Then, install NodeCG:
 ```
 npm install --global nodecg-cli@latest
 mkdir nodecg
