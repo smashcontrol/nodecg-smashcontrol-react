@@ -25,6 +25,16 @@ Once setup is complete, install this bundle:
 `nodecg install smashcontrol/nodecg-smashcontrol-react`
 and any graphics bundles you may be using. 
 
+You will next need to build the bundle using yarn. If you do not have yarn, you can install it using the following command:  
+`npm install --global yarn`  
+Then navigate to the bundle install directory and build it:  
+```
+cd bundles/nodecg-smashcontrol-react
+yarn build
+```  
+
+You may have to run `npm install` once in this directory if you're getting build errors.
+
 Finally, start NodeCG using `nodecg start`, and navigate to `localhost:9090` in your browser. Smashcontrol is tested to work in Firefox and Google Chrome.
 
 ## How to Use
