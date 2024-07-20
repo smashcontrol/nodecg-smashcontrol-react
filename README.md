@@ -59,3 +59,6 @@ In conjunction with the default-64-graphics package, this tab offers a quick and
 One is for the primary color, which includes the border, top bar and nameplates. The Secondary color is currently only used in the score box, and the sidebar background color is for the large space containing the nameplates, scores, ports and characters. 
 
 The two toggles are self explanatory, toggling them off removes the indicated feature, if their use is not desired. 
+
+## Distributed use
+It is possible to use smashcontrol to control the same stream on multiple devices. This is done by obtaining the host pc (the one running NodeCG)'s IP address, and entering that into the address bar instead of `localhost`. It is worth noting that the package is not developed for mobile use, but does work on mobile devices. This method also may not work on managed internet networks (i.e. school wifi). 
