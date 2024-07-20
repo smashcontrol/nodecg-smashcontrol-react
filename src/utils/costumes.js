@@ -1,4 +1,5 @@
 export let ssb64 = {
+	"Banjo & Kazooie": ["Default", "Black", "Blue", "Green", "Yellow", "White", "Orange"],
     "Bowser": ["Default", "Black", "Blue", "Green", "Red", "Yellow"],
     "Conker": ["Default", "Black", "Green", "Pink", "Red", "White"],
     "Dark Samus": ["Default", "Brown", "Gray", "Power", "Purple", "White"],

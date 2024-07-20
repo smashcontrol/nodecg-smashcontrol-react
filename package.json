@@ -18,14 +18,14 @@
         "name": "game-select",
         "title": "Game Select",
         "file": "game-select.html",
-        "workspace": "Set Info",
+        "workspace": "1. Set Info",
         "width": 2
       },
       {
         "name": "set-info",
         "title": "Set Info",
         "file": "set-info.html",
-        "workspace": "Set Info",
+        "workspace": "1. Set Info",
         "width": 8
       },
       {
@@ -49,7 +49,7 @@
         "name": "stream-queue",
         "title": "Stream Queue",
         "file": "stream-queue.html",
-        "workspace": "Set Info",
+        "workspace": "1. Set Info",
         "width": 2
       },
       {
@@ -73,29 +73,36 @@
         "name": "thumbnail-gen",
         "title": "Thumbnail Generator",
         "file": "thumbnail-gen.html",
-        "workspace": "Set Info",
+        "workspace": "1. Set Info",
         "width": 2
       },
       {
         "name": "game-select-top-8",
         "title": "Game Select",
         "file": "game-select.html",
-        "workspace": "Top 8",
+        "workspace": "2. Top 8",
         "width": 2
       },
       {
         "name": "top-8-generator",
         "title": "Top 8 Generator",
         "file": "top-8-generator.html",
-        "workspace": "Top 8",
+        "workspace": "2. Top 8",
         "width": 8
       },
       {
         "name": "top-8-importer",
         "title": "Top 8 Importer",
         "file": "top-8-importer.html",
-        "workspace": "Top 8",
+        "workspace": "2. Top 8",
         "width": 2
+      },
+      {
+        "name": "layout-manager",
+        "title": "Layout Manager",
+        "file": "layout-manager.html",
+        "workspace": "3. Layout Manager",
+        "width": 10
       }
     ]
   },
@@ -105,6 +112,7 @@
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-admin": "^4.9.3",
+    "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
     "react-fitty": "^1.0.1",
     "react-select": "^5.7.2",
