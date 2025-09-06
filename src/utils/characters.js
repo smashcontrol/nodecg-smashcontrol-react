@@ -1,4 +1,4 @@
-const ssb64_character_list = ["Mario", "Luigi", "Yoshi", "Pikachu", "Fox", "Samus", "Falcon", "Jigglypuff", "Ness", "Kirby", "Link", "Donkey Kong", "[REMIX] Bowser",
+const ssb64_character_list = ["", "Mario", "Luigi", "Yoshi", "Pikachu", "Fox", "Samus", "Falcon", "Jigglypuff", "Ness", "Kirby", "Link", "Donkey Kong", "[REMIX] Bowser",
     "[REMIX] Dr. Mario", "[REMIX] Sheik", "[REMIX] Young Link", "[REMIX] Ganondorf", "[REMIX] Dark Samus", "[REMIX] King Dedede", "[REMIX] Falco",
     "[REMIX] Wolf", "[REMIX] Mewtwo", "[REMIX] Lucas", "[REMIX] Marth", "[REMIX] Wario", "[REMIX] Sonic", "[REMIX] Conker", "[REMIX] Marina",
     "[REMIX] Goemon", "[REMIX] Slippy", "[REMIX] Peppy", "[REMIX] Banjo & Kazooie"];
@@ -23,7 +23,7 @@ const ssbult_character_list = ssb4_character_list.concat(["Ice Climbers", "Young
     "Mii Swordfighter", "Mii Brawler", "Banjo & Kazooie", "Hero", "Terry", "Byleth Male", "Byleth Female", "Min Min", "Steve",
     "Alex", "Zombie", "Enderman", "Sephiroth", "Pyra Mythra", "Kazuya", "Sora"]);
 
-const roa_character_list = ["Absa", "Clairen", "Elliana", "Etalus", "Forsburn", "Hodan", "Kragg", "Maypul", "Mollo", "Olympia", "Orcane", "Ori", "Pomme", "Ranno", "Shovel Knight",
+const roa_character_list = ["", "Absa", "Clairen", "Elliana", "Etalus", "Forsburn", "Hodan", "Kragg", "Maypul", "Mollo", "Olympia", "Orcane", "Ori", "Pomme", "Ranno", "Shovel Knight",
     "Sylvanos", "Wrastor", "Zetterburn"];
 
 const ssb64 = {

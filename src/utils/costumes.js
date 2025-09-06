@@ -63,6 +63,7 @@ export let ssbm = {
 };
 
 export let ssbult = {
+    "" : [],
     "Banjo & Kazooie": [
         "Default",
         "Black",

@@ -11,7 +11,7 @@ const NODECG_BUNDLE = 'nodecg-smashcontrol-react';
 
 export const Top8Gen = () => {
     const [setInfo] = useReplicant('setInfo', defaultSetObject, {namespace: NODECG_BUNDLE});
-    const [top8Array, setTop8Array] = useReplicant('top8Info', Array.from({length:8}, () => ({'playercharacter': characters[setInfo.game][0]})), {namespace: NODECG_BUNDLE});
+    const [top8Array, setTop8Array] = useReplicant('top8Info', Array.from({length:8}, () => ({'playercharacter': characters[setInfo.game][0], 'playercostume': "Default"})), {namespace: NODECG_BUNDLE});
     const [top8TournamentInfo, setTop8TournamentInfo] = useReplicant('top8TournamentInfo', {}, {namespace: NODECG_BUNDLE});
     const current_game_costume_list = all_costumes[setInfo.game];
     const character_list = setInfo.game === 'ssbult' ? Object.keys(all_costumes.ssbult) : characters[setInfo.game];
@@ -47,10 +47,10 @@ export const Top8Gen = () => {
         setTop8Array(newArray);
     };
     
-    const handleTournamentChange = (field, value) => {
+    const handleTournamentChange = useCallback((field, value) => {
         top8TournamentInfo[field] = value;
         setTop8TournamentInfo(top8TournamentInfo);
-    };
+    }, [top8TournamentInfo, setTop8TournamentInfo]);
 
 
     return(
@@ -74,7 +74,8 @@ export const Top8Gen = () => {
                         <div>Costume:</div>
                             {current_game_costume_list[costumeName(i)] ? 
                                 <select id={i + `costume`} key={Math.random()} defaultValue={top8Array[i].playercostume ? 
-                                                                                                top8Array[i].playercostume : 'Default'}>
+                                                                                                top8Array[i].playercostume : 'Default'}
+                                                                                                onChange={(e) => handleChange(i, 'playercostume', e.target.value)}>
                                         {current_game_costume_list[costumeName(i)].map((costume, i) => {
                                             return(
                                                 <option key={i} value={costume}>{costume}</option>
@@ -100,17 +101,17 @@ export const Top8Gen = () => {
 
         <TournamentInfo>
             <div>Tournament Name:</div>
-            <input id={`tourneyname`} key={Math.random()} defaultValue={top8TournamentInfo.tourneyname}
-                            onChange={(e) => handleChange('tourneyname', e.target.value)}></input>
+            <input id={`tourneyname`} defaultValue={top8TournamentInfo.tourneyname}
+                            onChange={(e) => handleTournamentChange('tourneyname', e.target.value)}></input>
             <div>Tournament Date:</div>
-            <input id={`tourneydate`} key={Math.random()} defaultValue={top8TournamentInfo.tourneydate}
-                            onChange={(e) => handleChange('tourneydate', e.target.value)}></input>
+            <input id={`tourneydate`} defaultValue={top8TournamentInfo.tourneydate}
+                            onChange={(e) => handleTournamentChange('tourneydate', e.target.value)}></input>
             <div>Tournament Entrants:</div>
-            <input id={`tourneyentrants`} key={Math.random()} defaultValue={top8TournamentInfo.tourneyentrants}
-                            onChange={(e) => handleChange('tourneyentrants', e.target.value)}></input>
+            <input id={`tourneyentrants`} defaultValue={top8TournamentInfo.tourneyentrants}
+                            onChange={(e) => handleTournamentChange('tourneyentrants', e.target.value)}></input>
             <div>Tournament Location:</div>
-            <input id={`tourneylocation`} key={Math.random()} defaultValue={top8TournamentInfo.tourneylocation}
-                            onChange={(e) => handleChange('tourneylocation', e.target.value)}></input>
+            <input id={`tourneylocation`} defaultValue={top8TournamentInfo.tourneylocation}
+                            onChange={(e) => handleTournamentChange('tourneylocation', e.target.value)}></input>
         </TournamentInfo>
         </Top8Container>
     )
